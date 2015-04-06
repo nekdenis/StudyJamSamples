@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">ImageList</string>
-    <string name="images_search_hint">Enter query</string>
+    <string name="app_name">Study Jams</string>
 </resources>

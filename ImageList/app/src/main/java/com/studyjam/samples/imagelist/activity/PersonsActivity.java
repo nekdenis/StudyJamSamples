@@ -1,6 +1,8 @@
 package com.studyjam.samples.imagelist.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -15,7 +17,13 @@ import java.util.List;
 public class PersonsActivity extends Activity {
 
     private ListView personsListView;
-    private EditText queryEditText;
+
+    public static void startActivityAsTop(Context context){
+        Intent intent = new Intent(context, PersonsActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +35,6 @@ public class PersonsActivity extends Activity {
 
     private void initView() {
         personsListView = (ListView) findViewById(R.id.persons_list_view);
-        queryEditText = (EditText) findViewById(R.id.images_query_edittext);
     }
 
     private void initPersonList() {
