@@ -1,10 +1,11 @@
-package com.studyjam.samples.imagelist;
+package com.studyjam.samples.imagelist.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.studyjam.samples.imagelist.R;
 import com.studyjam.samples.imagelist.adapter.PersonListAdapter;
 import com.studyjam.samples.imagelist.data.dao.PersonDao;
 import com.studyjam.samples.imagelist.data.dto.Person;

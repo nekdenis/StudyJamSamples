@@ -1,11 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.studyjam.samples.imagelist">
 
-    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" android:theme="@style/AppTheme">
+    <!-- Include following permission if you load images from Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Include following permission if you want to cache images on SD card -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-        <activity android:name=".PersonsActivity">
-            <intent-filter>
+
+    <application android:name=".App" android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.PersonsActivity">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

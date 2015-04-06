@@ -8,7 +8,7 @@ import java.util.List;
 public class PersonDao {
     public List<Person> getPersons() {
         List<Person> persons = new ArrayList<>();
-        for (int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             persons.add(new Person("Jake Wharton", "https://lh5.googleusercontent.com/-MPF7hSJNtf8/UMFODfjoJsI/AAAAAAAAOlo/7LumYExHE-U/w1296-h1293-no/IMG_2064.JPG"));
             persons.add(new Person("Chris Banes", "https://lh4.googleusercontent.com/-vCdsJs68-QY/VAQzjT_e0-I/AAAAAAAAgqI/2J-9nBub4Vs/w1291-h1293-no/IMG_20140819_130837.jpg"));
             persons.add(new Person("Jeremy Feinstein", "https://lh5.googleusercontent.com/-9g6iz88YAa0/UQtJEM0Xq1I/AAAAAAAADkc/_qRxLgvtr2o/s1050-no/me2.jpg"));
