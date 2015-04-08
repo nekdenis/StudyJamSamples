@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/image_search_query_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:singleLine="true"
+        android:layout_alignBottom="@+id/image_search_perform_search_button"
+        android:layout_toLeftOf="@id/image_search_perform_search_button"
+        android:hint="@string/search_image_hint" />
+
+    <Button
+        android:id="@id/image_search_perform_search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:text="@string/search_image_search_button" />
+
+    <GridView
+        android:id="@+id/image_search_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image_search_query_edit_text"
+        android:layout_marginTop="8dp"
+        android:numColumns="@integer/grid_columns" />
+
+</RelativeLayout>

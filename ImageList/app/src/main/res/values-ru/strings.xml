@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Study Jams</string>
+    <string name="search_image_hint">Введите запрос</string>
+    <string name="search_image_title">Поиск изображений Google</string>
+    <string name="search_image_search_button">Найти</string>
+    <string name="search_error">Ошибка во время поиска</string>
+</resources>
