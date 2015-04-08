@@ -15,15 +15,21 @@ import com.studyjam.samples.imagelist.data.dto.Person;
 
 public class PersonListAdapter extends ArrayAdapter<Person> {
 
+    private LayoutInflater inflater;
+    private DisplayImageOptions displayImageOptions;
+
     public PersonListAdapter(Context context) {
         super(context, 0);
+        inflater = LayoutInflater.from(context);
+        displayImageOptions = new DisplayImageOptions.Builder()
+                .resetViewBeforeLoading(true)
+                .build();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.person_list_item, parent, false);
             holder = new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.person_list_item_name);
@@ -37,16 +43,13 @@ public class PersonListAdapter extends ArrayAdapter<Person> {
         return convertView;
     }
 
-    static class ViewHolder {
+    private class ViewHolder {
         TextView name;
         ImageView icon;
 
         void populateItem(Person person){
             name.setText(person.getName());
-            DisplayImageOptions options = new DisplayImageOptions.Builder()
-                    .resetViewBeforeLoading(true)
-                    .build();
-            ImageLoader.getInstance().displayImage(person.getImageUrl(), icon, options);
+            ImageLoader.getInstance().displayImage(person.getImageUrl(), icon, displayImageOptions);
         }
     }
 }
