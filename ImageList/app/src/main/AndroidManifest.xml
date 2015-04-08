@@ -25,7 +25,9 @@
 
         <activity android:name=".activity.PersonsActivity" />
 
-        <activity android:name=".activity.ImageSearchActivity">
+        <activity
+            android:name=".activity.ImageSearchActivity"
+            android:label="@string/search_image_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
