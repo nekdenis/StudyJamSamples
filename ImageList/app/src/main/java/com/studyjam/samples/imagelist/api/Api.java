@@ -8,7 +8,10 @@ import retrofit.http.Query;
 
 public interface Api {
 
-    @GET("/search/images?v=1.0")
-    void searchImages(@Query("q") String query, Callback<ImageResponse> callback);
+    @GET("/search/images?v=1.0&rsz=8&")
+    public void searchImages(
+            @Query("q") String query,
+            @Query("start") int start,
+            Callback<ImageResponse> callback);
 
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -64,14 +65,42 @@ public class ImageSearchActivity extends Activity {
         performSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                performSearch();
+                performNewSearch();
+            }
+        });
+        imagePreviewGridView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView absListView, int scrollState) {
+            }
+
+            @Override
+            public void onScroll(AbsListView absListView, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+                final int lastItem = firstVisibleItem + visibleItemCount;
+                if (lastItem > 0 && totalItemCount > 0) {
+                    if (lastItem == imagePreviewAdapter.getCount()) {
+                        performOffsetSearch(lastItem);
+                    }
+                }
             }
         });
     }
 
-    private void performSearch() {
+    private void performNewSearch() {
         String searchQuery = searchQueryEditText.getText().toString();
-        api.searchImages(searchQuery, searchImageCallback);
+        imageResultList.clear();
+        imagePreviewAdapter.notifyDataSetChanged();
+        int start = 0;
+        searchImages(searchQuery, start);
+    }
+
+    private void performOffsetSearch(int offset) {
+        String searchQuery = searchQueryEditText.getText().toString();
+        searchImages(searchQuery, offset);
+    }
+
+    private void searchImages(String searchQuery, int start) {
+        api.searchImages(searchQuery, start, searchImageCallback);
     }
 
     private Api getApi() {
@@ -87,7 +116,6 @@ public class ImageSearchActivity extends Activity {
         public void success(ImageResponse imageResponse, Response response) {
 
             if (imageResponse.getImagesList() != null) {
-                imageResultList.clear();
                 imageResultList.addAll(imageResponse.getImagesList());
                 imagePreviewAdapter.notifyDataSetChanged();
             } else {

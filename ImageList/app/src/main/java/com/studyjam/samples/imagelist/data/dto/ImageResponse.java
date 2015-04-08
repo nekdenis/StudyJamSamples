@@ -14,7 +14,11 @@ public class ImageResponse {
         private List<ImageResult> results;
     }
 
-   public List<ImageResult> getImagesList() {
-        return responseData.results;
+    public List<ImageResult> getImagesList() {
+        if (responseData != null) {
+            return responseData.results;
+        } else {
+            return null;
+        }
     }
 }
