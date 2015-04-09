@@ -14,6 +14,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.studyjam.samples.imagelist.R;
 import com.studyjam.samples.imagelist.data.dto.Person;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class PersonListAdapter extends ArrayAdapter<Person> {
 
     private LayoutInflater inflater;
@@ -37,6 +40,7 @@ public class PersonListAdapter extends ArrayAdapter<Person> {
             holder = new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.person_list_item_name);
             holder.icon = (ImageView) convertView.findViewById(R.id.person_list_item_image);
+            holder.timestamp = (TextView) convertView.findViewById(R.id.timestamp);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -51,10 +55,12 @@ public class PersonListAdapter extends ArrayAdapter<Person> {
     private class ViewHolder {
         TextView name;
         ImageView icon;
+        TextView timestamp;
 
         void populateItem(Person person){
             name.setText(person.getName());
             ImageLoader.getInstance().displayImage(person.getImageUrl(), icon, displayImageOptions);
+            timestamp.setText(new SimpleDateFormat().format(new Date()));
         }
     }
 }

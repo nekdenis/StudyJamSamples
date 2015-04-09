@@ -23,7 +23,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.PersonsActivity" />
+        <activity android:name=".activity.PersonsActivity"
+            android:label="@string/persons_fast_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.ImageSearchActivity"
@@ -35,7 +41,8 @@
         </activity>
 
         <activity
-            android:name=".activity.PersonsSlowActivity">
+            android:name=".activity.PersonsSlowActivity"
+            android:label="@string/persons_slow_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

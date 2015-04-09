@@ -34,12 +34,13 @@ public class PersonsSlowActivity extends Activity {
     }
 
     private void initView() {
-        personsListView = (ListView) findViewById(R.id.persons_list_view);
+        personsListView =
+                (ListView) findViewById(R.id.persons_list_view);
     }
 
     private void initPersonList() {
-        PersonSlowListAdapter personsListAdapter = new PersonSlowListAdapter(this);
         List<Person> persons = new PersonDao().getPersons();
+        PersonSlowListAdapter personsListAdapter = new PersonSlowListAdapter(this);
         personsListAdapter.addAll(persons);
         personsListView.setAdapter(personsListAdapter);
     }
