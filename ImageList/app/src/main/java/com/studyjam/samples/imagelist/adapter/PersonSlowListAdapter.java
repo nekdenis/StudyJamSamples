@@ -14,12 +14,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.studyjam.samples.imagelist.R;
 import com.studyjam.samples.imagelist.data.dto.Person;
 
-public class PersonListAdapter extends ArrayAdapter<Person> {
+public class PersonSlowListAdapter extends ArrayAdapter<Person> {
 
     private LayoutInflater inflater;
     private DisplayImageOptions displayImageOptions;
 
-    public PersonListAdapter(Context context) {
+    public PersonSlowListAdapter(Context context) {
         super(context, 0);
         inflater = LayoutInflater.from(context);
         displayImageOptions = new DisplayImageOptions.Builder()
@@ -31,30 +31,14 @@ public class PersonListAdapter extends ArrayAdapter<Person> {
     public View getView(int position, View convertView, ViewGroup parent) {
         long startTime = System.nanoTime();
 
-        ViewHolder holder;
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.person_list_item, parent, false);
-            holder = new ViewHolder();
-            holder.name = (TextView) convertView.findViewById(R.id.person_list_item_name);
-            holder.icon = (ImageView) convertView.findViewById(R.id.person_list_item_image);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-        }
+        convertView = inflater.inflate(R.layout.person_list_item, parent, false);
+        TextView name = (TextView) convertView.findViewById(R.id.person_list_item_name);
+        ImageView icon = (ImageView) convertView.findViewById(R.id.person_list_item_image);
         Person person = getItem(position);
-        holder.populateItem(person);
+        name.setText(person.getName());
+        ImageLoader.getInstance().displayImage(person.getImageUrl(), icon, displayImageOptions);
 
-        Log.d("PersonListAdapter", "getView takes " + (System.nanoTime() - startTime) / 1000);
+        Log.d("PersonSlowListAdapter", "getView takes "+(System.nanoTime()-startTime)/1000);
         return convertView;
-    }
-
-    private class ViewHolder {
-        TextView name;
-        ImageView icon;
-
-        void populateItem(Person person){
-            name.setText(person.getName());
-            ImageLoader.getInstance().displayImage(person.getImageUrl(), icon, displayImageOptions);
-        }
     }
 }
