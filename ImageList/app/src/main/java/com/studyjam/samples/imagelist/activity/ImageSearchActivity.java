@@ -19,7 +19,6 @@ import com.studyjam.samples.imagelist.data.dto.ImageResult;
 import com.studyjam.samples.imagelist.util.Constants;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -28,11 +27,16 @@ import retrofit.client.Response;
 
 public class ImageSearchActivity extends Activity {
 
+    private static final String EXTRA_STATE_DATA_ARRAY_LIST = "EXTRA_STATE_DATA_ARRAY_LIST";
+    private static final String EXTRA_STATE_OFFSET = "EXTRA_STATE_OFFSET";
+    private static final String EXTRA_STATE_QUERY = "EXTRA_STATE_QUERY";
+
     private GridView imagePreviewGridView;
     private EditText searchQueryEditText;
     private Button performSearchButton;
     private ImagePreviewAdapter imagePreviewAdapter;
-    private List<ImageResult> imageResultList = new ArrayList<>();
+    private ArrayList<ImageResult> imageResultList = new ArrayList<>();
+    private int lastSearchOffset = 0;
     private Api api;
 
     public static void startActivity(Context context) {
@@ -48,6 +52,27 @@ public class ImageSearchActivity extends Activity {
         initView();
         initImagesGrid();
         initListeners();
+        if (savedInstanceState != null) {
+            restoreState(savedInstanceState);
+        }
+    }
+
+    private void restoreState(Bundle savedInstanceState) {
+        ArrayList<ImageResult> list = (ArrayList<ImageResult>) savedInstanceState.getSerializable(EXTRA_STATE_DATA_ARRAY_LIST);
+        imageResultList.clear();
+        imageResultList.addAll(list);
+        imagePreviewAdapter.notifyDataSetChanged();
+        lastSearchOffset = savedInstanceState.getInt(EXTRA_STATE_OFFSET);
+        imagePreviewGridView.smoothScrollToPosition(imageResultList.size() - 1);
+//        searchQueryEditText.setText(savedInstanceState.getString(EXTRA_STATE_QUERY));
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(EXTRA_STATE_DATA_ARRAY_LIST, imageResultList);
+        outState.putInt(EXTRA_STATE_OFFSET, lastSearchOffset);
+//        outState.putString(EXTRA_STATE_QUERY, searchQueryEditText.getText().toString());
     }
 
     private void initView() {
