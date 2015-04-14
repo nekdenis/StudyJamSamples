@@ -30,7 +30,7 @@ public class ImageSearchActivity extends Activity {
 
     private static final String EXTRA_STATE_DATA_ARRAY_LIST = "EXTRA_STATE_DATA_ARRAY_LIST";
     private static final String EXTRA_STATE_OFFSET = "EXTRA_STATE_OFFSET";
-    private static final String EXTRA_STATE_QUERY = "EXTRA_STATE_QUERY";
+    private static final String EXTRA_STATE_LIST_POSITION = "EXTRA_STATE_LIST_POSITION";
 
     private GridView imagePreviewGridView;
     private EditText searchQueryEditText;
@@ -64,7 +64,7 @@ public class ImageSearchActivity extends Activity {
         imageResultList.addAll(list);
         imagePreviewAdapter.notifyDataSetChanged();
         lastSearchOffset = savedInstanceState.getInt(EXTRA_STATE_OFFSET);
-        imagePreviewGridView.smoothScrollToPosition(imageResultList.size() - 1);
+        imagePreviewGridView.smoothScrollToPosition(savedInstanceState.getInt(EXTRA_STATE_LIST_POSITION));
     }
 
     @Override
@@ -72,6 +72,7 @@ public class ImageSearchActivity extends Activity {
         super.onSaveInstanceState(outState);
         outState.putSerializable(EXTRA_STATE_DATA_ARRAY_LIST, imageResultList);
         outState.putInt(EXTRA_STATE_OFFSET, lastSearchOffset);
+        outState.putInt(EXTRA_STATE_LIST_POSITION, imagePreviewGridView.getFirstVisiblePosition());
     }
 
     private void initView() {

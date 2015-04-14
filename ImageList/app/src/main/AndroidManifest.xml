@@ -25,25 +25,23 @@
 
         <activity
             android:name=".activity.PersonsActivity"
-            android:label="@string/persons_fast_title">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/persons_fast_title"></activity>
 
         <activity
             android:name=".activity.ImageSearchActivity"
-            android:label="@string/search_image_title">
+            android:label="@string/search_image_title"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".activity.ImageFullScreenActivity"
-            android:theme="@style/AppThemeNoBar"/>
+            android:theme="@style/AppThemeNoBar" />
 
         <activity
             android:name=".activity.PersonsSlowActivity"
