@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -64,7 +65,6 @@ public class ImageSearchActivity extends Activity {
         imagePreviewAdapter.notifyDataSetChanged();
         lastSearchOffset = savedInstanceState.getInt(EXTRA_STATE_OFFSET);
         imagePreviewGridView.smoothScrollToPosition(imageResultList.size() - 1);
-//        searchQueryEditText.setText(savedInstanceState.getString(EXTRA_STATE_QUERY));
     }
 
     @Override
@@ -72,7 +72,6 @@ public class ImageSearchActivity extends Activity {
         super.onSaveInstanceState(outState);
         outState.putSerializable(EXTRA_STATE_DATA_ARRAY_LIST, imageResultList);
         outState.putInt(EXTRA_STATE_OFFSET, lastSearchOffset);
-//        outState.putString(EXTRA_STATE_QUERY, searchQueryEditText.getText().toString());
     }
 
     private void initView() {
@@ -107,6 +106,13 @@ public class ImageSearchActivity extends Activity {
                         performOffsetSearch(lastItem);
                     }
                 }
+            }
+        });
+        imagePreviewGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String imageUrl = imageResultList.get(position).getUrl();
+                ImageFullScreenActivity.startActivity(ImageSearchActivity.this, imageUrl);
             }
         });
     }

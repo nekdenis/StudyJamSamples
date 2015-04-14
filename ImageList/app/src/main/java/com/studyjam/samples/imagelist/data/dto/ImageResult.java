@@ -2,7 +2,9 @@ package com.studyjam.samples.imagelist.data.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ImageResult {
+import java.io.Serializable;
+
+public class ImageResult implements Serializable {
 
     @SerializedName("GsearchResultClass")
     private String gsearchResultClass;
