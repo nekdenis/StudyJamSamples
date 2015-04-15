@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.data.db.simplecursor.dao;
+package com.studyjam.dbsamples.data.db.simplecursor.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,12 +7,12 @@ import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.studyjam.dbsamples.data.db.simplecursor.SQLiteHelper;
+import com.studyjam.dbsamples.data.db.simplecursor.dto.CoreObject;
+import com.studyjam.dbsamples.data.db.simplecursor.table.CoreObjectTable;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.SQLiteHelper;
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.dto.CoreObject;
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.table.CoreObjectTable;
 
 public class CoreObjectsDataSource {
 

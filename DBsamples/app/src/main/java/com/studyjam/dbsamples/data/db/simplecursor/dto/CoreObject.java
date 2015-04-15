@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.data.db.simplecursor.dto;
+package com.studyjam.dbsamples.data.db.simplecursor.dto;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.ui.adapter;
+package com.studyjam.dbsamples.ui.adapter;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import databases.samples.studyjam.com.dbsamples.R;
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.table.CoreObjectTable;
+import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.data.db.simplecursor.table.CoreObjectTable;
 
 public class CoreObjectCursorAdapter extends CursorAdapter {
 

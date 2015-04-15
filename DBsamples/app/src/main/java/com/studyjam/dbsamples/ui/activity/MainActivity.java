@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.ui.activity;
+package com.studyjam.dbsamples.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -7,9 +7,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 
-import databases.samples.studyjam.com.dbsamples.R;
-import databases.samples.studyjam.com.dbsamples.ui.fragment.CursorListFragment;
-import databases.samples.studyjam.com.dbsamples.ui.fragment.NavigationDrawerFragment;
+import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.ui.fragment.CursorListFragment;
+import com.studyjam.dbsamples.ui.fragment.NavigationDrawerFragment;
 
 
 public class MainActivity extends ActionBarActivity

@@ -1,10 +1,10 @@
-package databases.samples.studyjam.com.dbsamples.data.db.simplecursor;
+package com.studyjam.dbsamples.data.db.simplecursor;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.table.CoreObjectTable;
+import com.studyjam.dbsamples.data.db.simplecursor.table.CoreObjectTable;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
 

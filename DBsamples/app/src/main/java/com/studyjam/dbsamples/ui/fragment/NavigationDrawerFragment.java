@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.ui.fragment;
+package com.studyjam.dbsamples.ui.fragment;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -21,7 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import databases.samples.studyjam.com.dbsamples.R;
+import com.studyjam.dbsamples.dbsamples.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.

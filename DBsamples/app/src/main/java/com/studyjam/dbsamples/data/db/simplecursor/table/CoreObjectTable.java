@@ -1,9 +1,9 @@
-package databases.samples.studyjam.com.dbsamples.data.db.simplecursor.table;
+package com.studyjam.dbsamples.data.db.simplecursor.table;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.SQLiteHelper;
+import com.studyjam.dbsamples.data.db.simplecursor.SQLiteHelper;
 
 public class CoreObjectTable {
     public static final String TABLE_CORE_OBJECT = "coreObject";

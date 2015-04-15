@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.ui.adapter;
+package com.studyjam.dbsamples.ui.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import databases.samples.studyjam.com.dbsamples.R;
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.dto.CoreObject;
+import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.data.db.simplecursor.dto.CoreObject;
 
 public class CoreObjectAdapter extends ArrayAdapter<CoreObject> {
 

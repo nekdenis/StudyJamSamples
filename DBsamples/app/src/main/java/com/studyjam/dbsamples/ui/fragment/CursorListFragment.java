@@ -1,4 +1,4 @@
-package databases.samples.studyjam.com.dbsamples.ui.fragment;
+package com.studyjam.dbsamples.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,10 +16,10 @@ import android.widget.ListAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import databases.samples.studyjam.com.dbsamples.R;
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.dao.CoreObjectsDataSource;
-import databases.samples.studyjam.com.dbsamples.data.db.simplecursor.dto.CoreObject;
-import databases.samples.studyjam.com.dbsamples.ui.adapter.CoreObjectCursorAdapter;
+import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.data.db.simplecursor.dao.CoreObjectsDataSource;
+import com.studyjam.dbsamples.data.db.simplecursor.dto.CoreObject;
+import com.studyjam.dbsamples.ui.adapter.CoreObjectCursorAdapter;
 
 
 /**
