@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.studyjam.dbsamples.dbsamples" >
+    package="com.studyjam.dbsamples" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.studyjam.dbsamples.ui.activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="com.studyjam.dbsamples.data.db.provider.GeneratedProvider"
+            android:authorities="com.studyjam.dbsamples.data.db.provider"
+            android:exported="false" />
+
     </application>
 
 </manifest>

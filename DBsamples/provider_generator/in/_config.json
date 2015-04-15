@@ -1,0 +1,13 @@
+{
+	"syntaxVersion": "3",
+    "projectPackageId": "com.studyjam.dbsamples",
+	"authority": "com.studyjam.dbsamples.data.db.provider",
+	"providerJavaPackage": "com.studyjam.dbsamples.data.db.provider",
+	"providerClassName": "GeneratedProvider",
+	"sqliteOpenHelperClassName": "GeneratedSQLiteOpenHelper",
+	"sqliteOpenHelperCallbacksClassName": "GeneratedSQLiteOpenHelperCallbacks",
+	"databaseFileName": "generated.db",
+	"databaseVersion": 1,
+	"enableForeignKeys": true,
+	"useAnnotations": true,
+}

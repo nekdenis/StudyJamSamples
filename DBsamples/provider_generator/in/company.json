@@ -1,0 +1,19 @@
+{
+	"documentation": "A commercial business.",
+	"fields": [
+
+		{
+			"documentation": "The commercial name of this company.",
+			"name": "name",
+			"type": "String",
+			"nullable": false,
+			"index": true,
+		},
+		{
+			"documentation": "The full address of this company.",
+			"name": "address",
+			"type": "String",
+			"nullable": true,
+		},
+	]
+}

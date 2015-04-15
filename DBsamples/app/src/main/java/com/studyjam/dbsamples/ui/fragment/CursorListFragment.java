@@ -13,13 +13,13 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.R;
 import com.studyjam.dbsamples.data.db.simplecursor.dao.CoreObjectsDataSource;
 import com.studyjam.dbsamples.data.db.simplecursor.dto.CoreObject;
 import com.studyjam.dbsamples.ui.adapter.CoreObjectCursorAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**

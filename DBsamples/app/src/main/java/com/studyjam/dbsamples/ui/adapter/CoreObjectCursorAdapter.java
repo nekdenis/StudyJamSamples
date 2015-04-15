@@ -10,8 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.R;
 import com.studyjam.dbsamples.data.db.simplecursor.table.CoreObjectTable;
 
 public class CoreObjectCursorAdapter extends CursorAdapter {

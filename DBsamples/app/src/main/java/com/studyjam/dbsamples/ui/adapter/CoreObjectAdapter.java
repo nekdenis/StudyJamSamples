@@ -8,10 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-
-import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.R;
 import com.studyjam.dbsamples.data.db.simplecursor.dto.CoreObject;
+
+import java.util.List;
 
 public class CoreObjectAdapter extends ArrayAdapter<CoreObject> {
 

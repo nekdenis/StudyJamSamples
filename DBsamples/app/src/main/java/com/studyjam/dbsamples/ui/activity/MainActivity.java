@@ -1,21 +1,22 @@
 package com.studyjam.dbsamples.ui.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 
-import com.studyjam.dbsamples.dbsamples.R;
+import com.studyjam.dbsamples.R;
 import com.studyjam.dbsamples.ui.fragment.CursorListFragment;
+import com.studyjam.dbsamples.ui.fragment.GeneratedProviderFragment;
 import com.studyjam.dbsamples.ui.fragment.NavigationDrawerFragment;
 
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    private static final String PREFS_NAME = "a";
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -45,21 +46,27 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment;
+        switch (position) {
+            case 0:
+                fragment = CursorListFragment.newInstance();
+                break;
+            default:
+                fragment = GeneratedProviderFragment.newInstance();
+        }
         fragmentManager.beginTransaction()
-                .replace(R.id.container, CursorListFragment.newInstance())
+                .replace(R.id.container, fragment)
                 .commit();
     }
+
 
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.section_simple_db);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.abc_toolbar_collapse_description);
                 break;
         }
     }

@@ -15,4 +15,8 @@
 
     <string name="action_add">Add</string>
 
+
+    <string name="section_simple_db">Simple db</string>
+    <string name="section_content_provider">Content provider</string>
+
 </resources>

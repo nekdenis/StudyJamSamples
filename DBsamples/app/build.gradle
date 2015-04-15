@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.studyjam.dbsamples.dbsamples"
+        applicationId "com.studyjam.dbsamples"
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
