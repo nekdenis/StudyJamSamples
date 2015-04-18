@@ -12,6 +12,7 @@ import com.studyjam.dbsamples.R;
 import com.studyjam.dbsamples.ui.fragment.CursorListFragment;
 import com.studyjam.dbsamples.ui.fragment.GeneratedProviderFragment;
 import com.studyjam.dbsamples.ui.fragment.NavigationDrawerFragment;
+import com.studyjam.dbsamples.ui.fragment.OrmFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -48,11 +49,15 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment;
         switch (position) {
-            case 0:
-                fragment = CursorListFragment.newInstance();
+            case 1:
+                fragment = GeneratedProviderFragment.newInstance();
+                break;
+            case 2:
+                fragment = OrmFragment.newInstance();
                 break;
             default:
-                fragment = GeneratedProviderFragment.newInstance();
+                fragment = CursorListFragment.newInstance();
+
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
@@ -66,7 +71,10 @@ public class MainActivity extends ActionBarActivity
                 mTitle = getString(R.string.section_simple_db);
                 break;
             case 2:
-                mTitle = getString(R.string.abc_toolbar_collapse_description);
+                mTitle = getString(R.string.section_content_provider);
+                break;
+            case 3:
+                mTitle = getString(R.string.section_ormlite);
                 break;
         }
     }
