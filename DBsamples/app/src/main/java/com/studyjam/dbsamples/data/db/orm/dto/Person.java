@@ -70,4 +70,7 @@ public class Person implements Indexed {
         this.age = age;
     }
 
+    public Company getCompany() {
+        return company;
+    }
 }

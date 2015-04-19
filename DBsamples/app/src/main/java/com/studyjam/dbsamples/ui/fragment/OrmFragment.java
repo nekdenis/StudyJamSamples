@@ -73,7 +73,8 @@ public class OrmFragment extends Fragment {
         try {
             CommonDao personDao = ormHelper.getDaoByClass(Person.class);
             PreparedQuery query = personDao.queryBuilder().prepare();
-            OrmCursorLoaderCallback<Person, Long> personLoaderCallback = new OrmCursorLoaderCallback<Person, Long>(getActivity(), personDao, query, adapter);
+            OrmCursorLoaderCallback<Person, Long> personLoaderCallback =
+                new OrmCursorLoaderCallback<Person, Long>(getActivity(), personDao, query, adapter);
             getActivity().getLoaderManager().initLoader(ORM_LOADER_ID, null, personLoaderCallback);
         } catch (SQLException e) {
             DLog.e(TAG, e.getMessage());
